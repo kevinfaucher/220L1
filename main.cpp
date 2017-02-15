@@ -18,14 +18,14 @@ int isPrime(int num);
 int loopTable(int n);
 int collatz();
 int leapyear();
-
+int stars();
 int main() {
     std::cout << "Hello World!\n"; //Coding Problem 1
     isPrime(11);
     loopTable(10);
     cout << collatz();
-    cout << leapyear();
-
+    leapyear();
+    stars();
 }
 
 /*
@@ -106,3 +106,18 @@ int leapyear() {
     }
 }
 
+int stars()
+{
+    int xsize;
+    cout<< "\nEnter the size of the 'x'" << endl;
+    cin >> xsize;
+    for(int rows=1;rows<=xsize;rows++){
+        for(int axis=1;axis<=xsize;axis++){
+            if(rows==axis || axis==(xsize+1)-rows) cout << "*";
+            else cout << " ";
+        }
+        cout<<endl;
+    }
+    return 0;
+ 
+}
