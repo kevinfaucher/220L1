@@ -25,7 +25,7 @@ int main() {
     std::cout << "Hello World!\n"; //Coding Problem 1
     cout << isPrime(11) << endl;
     loopTable(10);
-    cout << collatz();
+    cout << collatz() << endl;
     leapyear();
     stars();
     recurPrime(10);
