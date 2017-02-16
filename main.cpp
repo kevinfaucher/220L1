@@ -7,7 +7,7 @@
 
 #include <cstdlib>
 #include <iostream>
-//testing github upload
+//
 using namespace std;
 /*
  * 
@@ -68,12 +68,13 @@ int loopTable(int n) {
 /*
  Problem 4
  */
-int p3loop(){
+int p3loop() {
     int i = 1;
-    for(i; i <13; i++){
+    for (i; i < 13; i++) {
         loopTable(i);
     }
 }
+
 /*
  Problem 5
  */
