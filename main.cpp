@@ -19,13 +19,16 @@ int loopTable(int n);
 int collatz();
 int leapyear();
 int stars();
+int recurPrime(int num);
+
 int main() {
     std::cout << "Hello World!\n"; //Coding Problem 1
-    isPrime(11);
+    cout << isPrime(11) << endl;
     loopTable(10);
     cout << collatz();
     leapyear();
     stars();
+    recurPrime(10);
 }
 
 /*
@@ -36,10 +39,10 @@ int isPrime(int num) {
     int i = 2;
     while (i <= (num - 1)) {
         if (num % i == 0) {
-            cout << ("It's not a prime number");
+            return true;
             break;
         } else {
-            cout << ("It's a prime number");
+            return false;
             break;
         }
         i++;
@@ -106,18 +109,35 @@ int leapyear() {
     }
 }
 
-int stars()
-{
+int stars() {
     int xsize;
-    cout<< "\nEnter the size of the 'x'" << endl;
+    cout << "\nEnter the size of the 'x'" << endl;
     cin >> xsize;
-    for(int rows=1;rows<=xsize;rows++){
-        for(int axis=1;axis<=xsize;axis++){
-            if(rows==axis || axis==(xsize+1)-rows) cout << "*";
+    for (int rows = 1; rows <= xsize; rows++) {
+        for (int axis = 1; axis <= xsize; axis++) {
+            if (rows == axis || axis == (xsize + 1) - rows) cout << "*";
             else cout << " ";
         }
-        cout<<endl;
+        cout << endl;
     }
     return 0;
- 
+
 }
+
+//Prime Number Recursive function
+
+int recurPrime(int num) {
+    int divisor;
+    divisor = num / 2;
+    if (divisor == 1) {
+        return true;
+    } else {
+        if (num % divisor == 0) {
+            return false;
+        } else {
+            divisor = divisor - 1;
+            recurPrime(num);
+        }
+    }
+}
+
