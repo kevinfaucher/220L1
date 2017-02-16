@@ -20,15 +20,18 @@ int collatz();
 int leapyear();
 int stars();
 int recurPrime(int num);
+int p3loop();
 
 int main() {
     std::cout << "Hello World!\n"; //Coding Problem 1
     cout << isPrime(11) << endl;
     loopTable(10);
+    cout << p3loop() << endl;
     cout << collatz() << endl;
     leapyear();
     stars();
     recurPrime(10);
+
 }
 
 /*
@@ -65,7 +68,12 @@ int loopTable(int n) {
 /*
  Problem 4
  */
-
+int p3loop(){
+    int i = 1;
+    for(i; i <13; i++){
+        loopTable(i);
+    }
+}
 /*
  Problem 5
  */
