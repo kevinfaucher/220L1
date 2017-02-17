@@ -23,9 +23,11 @@ int recurPrime(int num);
 int p3loop();
 int reccurloop(int n, int i);
 int reccuryear(int year);
+int collatz2(int num);
+int callcollatz2();
 
 int main() {
-    reccuryear(2017);
+    callcollatz2();
     /*
     std::cout << "Hello World!\n"; //Coding Problem 1
     cout << isPrime(11) << endl;
@@ -36,6 +38,7 @@ int main() {
     leapyear();
     stars();
     recurPrime(10);
+    reccuryear(2017);
      */
 }
 
@@ -85,21 +88,24 @@ int p3loop() {
  */
 int collatz() {
     int usr;
+    int count = 0;
     cout << "Please enter an integer value: ";
     cin >> usr;
-    int count = 0;
     while (usr != 1) {
         if (usr % 2 == 0) {
             count += 1;
             usr = usr / 2;
+
         }//if
         else {
             count += 1;
             usr = (3 * usr) + 1;
+
         }//else
     }//while
     return count;
 }//collatz
+
 //Problem 6
 
 int leapyear() {
@@ -123,6 +129,7 @@ int leapyear() {
 
     }
 }
+//Problem 7
 
 int stars() {
     int xsize;
@@ -138,7 +145,37 @@ int stars() {
     return 0;
 
 }
+//Problem 8
 
+int collatz2(int num) {
+    int count = 0;
+    while (num != 1) {
+        if (num % 2 == 0) {
+            cout << "Collatz Conjecture is still working" << endl;
+            count += 1;
+            num = num / 2;
+        }//if
+        else {
+            cout << "Collatz Conjecture is still working" << endl;
+            count += 1;
+            num = (3 * num) + 1;
+        }//else
+    }//while
+    return count;
+}
+
+int callcollatz2() {
+    int upperb;
+    int lowerb;
+    cout << "Please enter an upper bound: ";
+    cin >> upperb;
+    cout << "Please enter a lower bound: ";
+    cin >> lowerb;
+    while (lowerb<upperb) {
+        return collatz2(++lowerb);
+    }
+
+}
 //Prime Number Recursive function
 //Problem 9
 
@@ -180,7 +217,7 @@ int reccuryear(int year) {
 
 
 
-    }
+}
 
 
 
