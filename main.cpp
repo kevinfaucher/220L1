@@ -12,7 +12,7 @@ using namespace std;
 /*
  * 
  */
-int num;
+
 
 int isPrime(int num);
 int loopTable(int n);
@@ -27,8 +27,7 @@ int collatz2(int num);
 int callcollatz2();
 
 int main() {
-    callcollatz2();
-    /*
+
     std::cout << "Hello World!\n"; //Coding Problem 1
     cout << isPrime(11) << endl;
     loopTable(10);
@@ -37,9 +36,11 @@ int main() {
     cout << collatz() << endl;
     leapyear();
     stars();
+    callcollatz2();
     recurPrime(10);
+    reccurloop(10, 1);
     reccuryear(2017);
-     */
+
 }
 
 /*
@@ -75,6 +76,8 @@ int loopTable(int n) {
 
 /*
  Problem 4
+ * takes no inputs and loops with a function call to the LoopTable function to
+ * print out multiplication tables.
  */
 int p3loop() {
     int i = 1;
@@ -85,28 +88,36 @@ int p3loop() {
 
 /*
  Problem 5
+ * Collatz conjecture formula that takes user input and returns the total loops
+ * of the function.
  */
 int collatz() {
     int usr;
     int count = 0;
-    cout << "Please enter an integer value: ";
+    cout << "Please enter a natural positive number: ";
     cin >> usr;
     while (usr != 1) {
         if (usr % 2 == 0) {
             count += 1;
             usr = usr / 2;
 
-        }//if
-        else {
+        } else {
             count += 1;
             usr = (3 * usr) + 1;
 
-        }//else
-    }//while
+        }
+    }
     return count;
 }//collatz
 
 //Problem 6
+
+/*
+ Takes no inputs
+ * Uses 2017 as a starting integer and uses conditional expressions in a loop
+ * to evaluate if a year meets leap-year conditions.  The loop terminates after
+ * "400 years" have been checked.
+ */
 
 int leapyear() {
     int year;
@@ -131,6 +142,9 @@ int leapyear() {
 }
 //Problem 7
 
+/*
+ Takes user input to print out a x of stars.  Done with nested loops.
+ */
 int stars() {
     int xsize;
     cout << "\nEnter the size of the 'x'" << endl;
@@ -147,6 +161,9 @@ int stars() {
 }
 //Problem 8
 
+/*
+ collatz2 takes a integer as input and returns the total function loops
+ */
 int collatz2(int num) {
     int count = 0;
     while (num != 1) {
@@ -164,6 +181,11 @@ int collatz2(int num) {
     return count;
 }
 
+/*
+ callcollatz2 takes user input and uses a loop to call collatz2 with 
+ * incrementing return values
+ */
+
 int callcollatz2() {
     int upperb;
     int lowerb;
@@ -171,7 +193,7 @@ int callcollatz2() {
     cin >> upperb;
     cout << "Please enter a lower bound: ";
     cin >> lowerb;
-    while (lowerb<upperb) {
+    while (lowerb < upperb) {
         return collatz2(++lowerb);
     }
 
@@ -179,6 +201,9 @@ int callcollatz2() {
 //Prime Number Recursive function
 //Problem 9
 
+/*
+ takes an integer and uses recursion to check if it is a prime number.
+ */
 int recurPrime(int num) {
     int divisor;
     divisor = num / 2;
@@ -196,16 +221,22 @@ int recurPrime(int num) {
 
 //Problem 10
 
+/*
+ Uses recursion to print out a multiplication table.
+ */
 int reccurloop(int n, int i) {
     if (i < 13) {
         cout << n << " * " << i << " = " << n * i << endl;
         return reccurloop(n, i + 1);
     }
-    return num;
+    return n;
 }
 
 //Problem 11
 
+/*
+ Uses recursion to calculate leap years
+ */
 int reccuryear(int year) {
     if (year < 2417) {
 
