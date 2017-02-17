@@ -21,17 +21,22 @@ int leapyear();
 int stars();
 int recurPrime(int num);
 int p3loop();
+int reccurloop(int n, int i);
+int reccuryear(int year);
 
 int main() {
+    reccuryear(2017);
+    /*
     std::cout << "Hello World!\n"; //Coding Problem 1
     cout << isPrime(11) << endl;
     loopTable(10);
+    reccurloop(10, 1);
     cout << p3loop() << endl;
     cout << collatz() << endl;
     leapyear();
     stars();
     recurPrime(10);
-
+     */
 }
 
 /*
@@ -95,6 +100,7 @@ int collatz() {
     }//while
     return count;
 }//collatz
+//Problem 6
 
 int leapyear() {
     int year;
@@ -134,6 +140,7 @@ int stars() {
 }
 
 //Prime Number Recursive function
+//Problem 9
 
 int recurPrime(int num) {
     int divisor;
@@ -149,4 +156,32 @@ int recurPrime(int num) {
         }
     }
 }
+
+//Problem 10
+
+int reccurloop(int n, int i) {
+    if (i < 13) {
+        cout << n << " * " << i << " = " << n * i << endl;
+        return reccurloop(n, i + 1);
+    }
+    return num;
+}
+
+//Problem 11
+
+int reccuryear(int year) {
+    if (year < 2417) {
+
+        if ((year % 400 == 0 || year % 100 != 0) &&(year % 4 == 0))
+            cout << year << endl;
+        return reccuryear(year + 1);
+    }
+
+
+
+
+    }
+
+
+
 
